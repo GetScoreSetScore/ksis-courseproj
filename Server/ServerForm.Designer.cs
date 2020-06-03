@@ -102,7 +102,7 @@
             this.StartButton.TabStop = false;
             this.StartButton.Text = "Запустить сервер";
             this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.button1_Click);
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // PortTextBox
             // 

@@ -33,10 +33,6 @@ namespace Server
         {
             InitializeComponent();
         }
-        private void StartButton_Click(object sender, EventArgs e)
-        {
-
-        }
         void Settimers()
         {
             PhysicsTimer = new System.Timers.Timer(20);
@@ -123,10 +119,22 @@ namespace Server
             }
         }
 
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            PlayerCount = Int32.Parse(PlayerCountTextBox.Text);
+            server.Initialize(AddressTextBox.Text, Int32.Parse(PortTextBox.Text), Int32.Parse(PlayerCountTextBox.Text), this);
+
+            InitializeField();
+            MainTabControl.SelectedTab = GamePage;
+            StartButton.Enabled = false;
+            Settimers();
+        }
+
         private void ServerForm_Load(object sender, EventArgs e)
         {
             CheckForIllegalCrossThreadCalls = false;
         }
+
         public int GetActivePlayers(Player[] players)
         {
             int i = 0;
@@ -261,15 +269,6 @@ namespace Server
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            PlayerCount = Int32.Parse(PlayerCountTextBox.Text);
-            server.Initialize(AddressTextBox.Text,Int32.Parse(PortTextBox.Text), Int32.Parse(PlayerCountTextBox.Text),this);
 
-            InitializeField();
-            MainTabControl.SelectedTab = GamePage;
-            StartButton.Enabled = false;
-            Settimers();
-        }
     }
 }

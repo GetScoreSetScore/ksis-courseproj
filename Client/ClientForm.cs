@@ -79,14 +79,7 @@ namespace Client
             MainTabControl.SelectedTab = MainPage;
             StartButton.Enabled = true;
         }
-        private void SButton_Click(object sender, EventArgs e)
-        {
-            PlayerCount = Int32.Parse(PlayerCountTextBox.Text);
-            InitializeField();
-            client.Connect(AddressTextBox.Text, Int32.Parse(PortTextBox.Text), this);
-            MainTabControl.SelectedTab = GamePage;
-            StartButton.Enabled = false;
-        }
+
         public void InitializeField()
         {
             platforms.Enqueue(platform1);
@@ -107,29 +100,29 @@ namespace Client
                 players.Add(player4);
             }
         }
-        private void ClientForm_Load(object sender, EventArgs e)
-        {
 
+
+        private void StartButton_Click(object sender, EventArgs e)
+        {
+            PlayerCount = Int32.Parse(PlayerCountTextBox.Text);
+            InitializeField();
+            client.Connect(AddressTextBox.Text, Int32.Parse(PortTextBox.Text), this);
+            MainTabControl.SelectedTab = GamePage;
+            StartButton.Enabled = false;
         }
 
-        private void tabControl1_KeyPress(object sender, KeyPressEventArgs e)
+        private void MainTabControl_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if((e.KeyChar == (char)Keys.Space)&&(playerstates[SelfIndex].IsActive))
+            if ((e.KeyChar == (char)Keys.Space) && (playerstates[SelfIndex].IsActive))
             {
-                
+
                 playerstates[SelfIndex].jumping = true;
                 playerstates[SelfIndex].force = 15;
                 playerstates[SelfIndex].jumpsleft--;
-
                 string jsonstring = JsonConvert.SerializeObject(playerstates[SelfIndex]);
                 byte[] message = client.PrepareMessage(jsonstring);
                 client.Send(message);
             }
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

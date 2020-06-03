@@ -76,7 +76,7 @@
             this.MainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.MainTabControl.TabIndex = 8;
             this.MainTabControl.TabStop = false;
-            this.MainTabControl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tabControl1_KeyPress);
+            this.MainTabControl.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.MainTabControl_KeyPress);
             // 
             // MainPage
             // 
@@ -103,7 +103,7 @@
             this.StartButton.TabStop = false;
             this.StartButton.Text = "Подключиться к серверу";
             this.StartButton.UseVisualStyleBackColor = true;
-            this.StartButton.Click += new System.EventHandler(this.SButton_Click);
+            this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
             // PortTextBox
             // 
@@ -245,7 +245,6 @@
             this.PlayerCountTextBox.Size = new System.Drawing.Size(132, 20);
             this.PlayerCountTextBox.TabIndex = 4;
             this.PlayerCountTextBox.Text = "2";
-            this.PlayerCountTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // ClientForm
             // 
@@ -255,7 +254,6 @@
             this.Controls.Add(this.MainTabControl);
             this.Name = "ClientForm";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.ClientForm_Load);
             this.MainTabControl.ResumeLayout(false);
             this.MainPage.ResumeLayout(false);
             this.MainPage.PerformLayout();
