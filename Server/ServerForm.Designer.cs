@@ -285,7 +285,7 @@
             this.ClientSize = new System.Drawing.Size(1359, 625);
             this.Controls.Add(this.MainTabControl);
             this.Name = "ServerForm";
-            this.Text = "Form1";
+            this.Text = "Сервер";
             this.Load += new System.EventHandler(this.ServerForm_Load);
             this.MainTabControl.ResumeLayout(false);
             this.MainPage.ResumeLayout(false);
