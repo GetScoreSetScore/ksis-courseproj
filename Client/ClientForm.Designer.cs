@@ -45,6 +45,9 @@
             this.player1 = new System.Windows.Forms.PictureBox();
             this.background = new System.Windows.Forms.PictureBox();
             this.PlayerCountTextBox = new System.Windows.Forms.TextBox();
+            this.PortLabel = new System.Windows.Forms.Label();
+            this.PlayerCountLabel = new System.Windows.Forms.Label();
+            this.IpLabel = new System.Windows.Forms.Label();
             this.MainTabControl.SuspendLayout();
             this.MainPage.SuspendLayout();
             this.GamePage.SuspendLayout();
@@ -80,6 +83,9 @@
             // 
             // MainPage
             // 
+            this.MainPage.Controls.Add(this.IpLabel);
+            this.MainPage.Controls.Add(this.PlayerCountLabel);
+            this.MainPage.Controls.Add(this.PortLabel);
             this.MainPage.Controls.Add(this.PlayerCountTextBox);
             this.MainPage.Controls.Add(this.StartButton);
             this.MainPage.Controls.Add(this.PortTextBox);
@@ -95,10 +101,10 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(447, 208);
+            this.StartButton.Location = new System.Drawing.Point(618, 298);
             this.StartButton.Margin = new System.Windows.Forms.Padding(4);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(133, 28);
+            this.StartButton.Size = new System.Drawing.Size(133, 48);
             this.StartButton.TabIndex = 2;
             this.StartButton.TabStop = false;
             this.StartButton.Text = "Подключиться к серверу";
@@ -107,7 +113,7 @@
             // 
             // PortTextBox
             // 
-            this.PortTextBox.Location = new System.Drawing.Point(447, 117);
+            this.PortTextBox.Location = new System.Drawing.Point(619, 217);
             this.PortTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PortTextBox.Name = "PortTextBox";
             this.PortTextBox.Size = new System.Drawing.Size(132, 20);
@@ -116,7 +122,7 @@
             // 
             // AddressTextBox
             // 
-            this.AddressTextBox.Location = new System.Drawing.Point(447, 89);
+            this.AddressTextBox.Location = new System.Drawing.Point(618, 161);
             this.AddressTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.AddressTextBox.Name = "AddressTextBox";
             this.AddressTextBox.Size = new System.Drawing.Size(132, 20);
@@ -239,12 +245,39 @@
             // 
             // PlayerCountTextBox
             // 
-            this.PlayerCountTextBox.Location = new System.Drawing.Point(448, 145);
+            this.PlayerCountTextBox.Location = new System.Drawing.Point(618, 270);
             this.PlayerCountTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.PlayerCountTextBox.Name = "PlayerCountTextBox";
             this.PlayerCountTextBox.Size = new System.Drawing.Size(132, 20);
             this.PlayerCountTextBox.TabIndex = 4;
             this.PlayerCountTextBox.Text = "2";
+            // 
+            // PortLabel
+            // 
+            this.PortLabel.AutoSize = true;
+            this.PortLabel.Location = new System.Drawing.Point(667, 200);
+            this.PortLabel.Name = "PortLabel";
+            this.PortLabel.Size = new System.Drawing.Size(32, 13);
+            this.PortLabel.TabIndex = 5;
+            this.PortLabel.Text = "Порт";
+            // 
+            // PlayerCountLabel
+            // 
+            this.PlayerCountLabel.AutoSize = true;
+            this.PlayerCountLabel.Location = new System.Drawing.Point(625, 253);
+            this.PlayerCountLabel.Name = "PlayerCountLabel";
+            this.PlayerCountLabel.Size = new System.Drawing.Size(110, 13);
+            this.PlayerCountLabel.TabIndex = 6;
+            this.PlayerCountLabel.Text = "Количество игроков";
+            // 
+            // IpLabel
+            // 
+            this.IpLabel.AutoSize = true;
+            this.IpLabel.Location = new System.Drawing.Point(667, 144);
+            this.IpLabel.Name = "IpLabel";
+            this.IpLabel.Size = new System.Drawing.Size(17, 13);
+            this.IpLabel.TabIndex = 7;
+            this.IpLabel.Text = "IP";
             // 
             // ClientForm
             // 
@@ -289,6 +322,9 @@
         private System.Windows.Forms.PictureBox player1;
         private System.Windows.Forms.PictureBox background;
         private System.Windows.Forms.TextBox PlayerCountTextBox;
+        private System.Windows.Forms.Label IpLabel;
+        private System.Windows.Forms.Label PlayerCountLabel;
+        private System.Windows.Forms.Label PortLabel;
     }
 }
 
