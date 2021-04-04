@@ -54,7 +54,7 @@ namespace Server
             SpawnPlatformTimer = new System.Timers.Timer(1500);
             SpawnPlatformTimer.Elapsed += SpawnPlatform;
             SpawnPlatformTimer.AutoReset = true;
-            SpawnPlatformTimer.Enabled = true;
+            SpawnPlatformTimer.Enabled = true;                                         //
             timer.Start();
         }
         public void SpawnPlatform(Object source, ElapsedEventArgs e)
@@ -153,7 +153,7 @@ namespace Server
             int i = 0;
             foreach(PictureBox platform in platflist)
             {
-                platform.Left -= Speed;
+                platform.Left -= Speed;                                               //
             }
             foreach (PictureBox player in players)
             {
